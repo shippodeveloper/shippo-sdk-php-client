@@ -1,0 +1,12 @@
+#IDE
+.idea
+
+#System file
+.DS_Store
+
+#Composer and vendor
+.composer.lock
+vendor
+
+#Enviroment
+.env
