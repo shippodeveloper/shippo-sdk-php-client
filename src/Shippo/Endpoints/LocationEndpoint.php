@@ -31,9 +31,9 @@ class LocationEndpoint extends BaseEndpoint
      * @link https://open-api.shippo.vn/api-endpoints/dia-diem#lay-danh-sach-tat-ca-dia-danh
      * @param string|null $parent_path
      * @return Collection
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \GuzzleHttp\Exception\GuzzleException | Exception
      */
-    public function getLocations(string $parent_path = null): Collection {
+    public function get(string $parent_path = null): Collection {
         $endpoint = '/config/locations';
         $options = [];
         if (null != $parent_path) {
@@ -62,9 +62,9 @@ class LocationEndpoint extends BaseEndpoint
      * @link https://open-api.shippo.vn/api-endpoints/dia-diem#chi-tiet-dia-danh
      * @param int $id
      * @return Location
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \GuzzleHttp\Exception\GuzzleException | Exception
      */
-    public function getLocationDetail(int $id): Location {
+    public function detail(int $id): Location {
         $endpoint = '/config/location/' .$id;
         $response = $this->client->getHttp()->request('GET', $endpoint);
         if ($response->getStatusCode() != 200) {
