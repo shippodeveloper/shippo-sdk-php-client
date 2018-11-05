@@ -9,7 +9,10 @@
 namespace Shippo\Models;
 
 
+use DateTime;
+use DateTimeInterface;
 use GuzzleHttp\Psr7\Response;
+use Shippo\Utils\DateTimeUtil;
 
 abstract class BaseModel
 {
@@ -22,6 +25,13 @@ abstract class BaseModel
      */
     protected function hydrate($data) {
         $this->data = $data;
+
+        for ($ii = 0, $size = count($this->date_fields); $ii < $size; ++$ii) {
+            if (!isset($data[$this->date_fields[$ii]]) || $data[$this->date_fields[$ii]] == null) {
+                continue;
+            }
+            $this->data[$this->date_fields[$ii]] = DateTimeUtil::convertDateTime($data[$this->date_fields[$ii]]);
+        }
     }
 
     public function __get($name) {

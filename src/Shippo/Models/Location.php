@@ -24,6 +24,7 @@ use DateTime;
  */
 class Location extends BaseModel
 {
+    protected $date_fields = ['createdAt', 'updatedAt'];
     /**
      * Location constructor.
      * @param $data
