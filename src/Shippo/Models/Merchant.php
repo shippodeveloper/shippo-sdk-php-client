@@ -9,7 +9,10 @@
 namespace Shippo\Models;
 
 
-class Merchant
+class Merchant extends BaseModel
 {
-
+    public function __construct($data)
+    {
+        $this->hydrate($data);
+    }
 }

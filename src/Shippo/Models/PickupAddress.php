@@ -9,7 +9,10 @@
 namespace Shippo\Models;
 
 
-class PickupAddress
+class PickupAddress extends BaseModel
 {
-
+    public function __construct($data)
+    {
+        $this->hydrate($data);
+    }
 }

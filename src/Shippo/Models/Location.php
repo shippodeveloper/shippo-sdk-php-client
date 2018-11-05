@@ -7,22 +7,23 @@
  */
 
 namespace Shippo\Models;
+use DateTime;
 
-
+/**
+ * @property-read integer $id
+ * @property-read string $name
+ * @property-read string $postalCode
+ * @property-read integer $level
+ * @property-read integer $parentId
+ * @property-read string $state
+ * @property-read string $lineage
+ * @property-read string $code
+ * @property-read integer $priority
+ * @property-read DateTime $createdAt
+ * @property-read DateTime $updatedAt
+ */
 class Location extends BaseModel
 {
-    public $id;
-    public $name;
-    public $postalCode;
-    public $level;
-    public $parentId;
-    public $state;
-    public $lineage;
-    public $code;
-    public $priority;
-    public $createdAt;
-    public $updatedAt;
-
     /**
      * Location constructor.
      * @param $data

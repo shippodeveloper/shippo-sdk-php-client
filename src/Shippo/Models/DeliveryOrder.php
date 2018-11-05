@@ -9,7 +9,13 @@
 namespace Shippo\Models;
 
 
-class DeliveryOrder
+class DeliveryOrder extends BaseModel
 {
-
+    /**
+     * DeliveryOrder constructor.
+     * @param $data
+     */
+    public function __construct($data) {
+        $this->hydrate($data);
+    }
 }
