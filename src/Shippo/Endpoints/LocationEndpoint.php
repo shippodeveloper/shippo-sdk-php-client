@@ -9,7 +9,6 @@
 namespace Shippo\Endpoints;
 
 
-use GuzzleHttp\Psr7\Response;
 use Shippo\Client;
 use Shippo\Collection;
 use Shippo\Exception;

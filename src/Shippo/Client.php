@@ -22,6 +22,11 @@ class Client
      */
     private $http;
 
+    public function __construct(Config $config)
+    {
+        $this->config = $config;
+    }
+
     /**
      * @return ClientInterface
      */
