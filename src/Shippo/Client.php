@@ -33,12 +33,17 @@ class Client
         return $this->http;
     }
 
-    protected function createDefaultHttpClient()
+
+    protected function createDefaultHttpClient(): \GuzzleHttp\Client
     {
         $options = [
             'exceptions' => false,
             'base_uri' => $this->config->getBaseUri(),
-            'timeout' => $this->config->getTimeout()
+            'timeout' => $this->config->getTimeout(),
+            'headers' => [
+                'Authorization' => $this->config->getAccessToken(),
+                'Content-Type' => 'application/json'
+            ]
         ];
 
         return new \GuzzleHttp\Client($options);
