@@ -12,6 +12,6 @@
         "phpunit/phpunit": "^7"
     },
     "autoload": {
-        "psr-4": {"Shippo\\": "src/Shippo"}
+        "psr-0": {"Shippo\\": "src/"}
     }
 }
