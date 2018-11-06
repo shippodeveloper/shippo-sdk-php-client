@@ -10,6 +10,3 @@ vendor
 
 #Enviroment
 .env
-
-#Development
-test/
