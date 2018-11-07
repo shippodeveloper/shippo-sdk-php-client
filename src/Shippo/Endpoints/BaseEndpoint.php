@@ -26,4 +26,15 @@ abstract class BaseEndpoint
     {
         $this->client = $client;
     }
+
+    /**
+     * Check is 2xx http status
+     *
+     * @param int $statusCode
+     * @return bool
+     */
+    protected function is2xxHttpStatus(int $statusCode): bool
+    {
+        return $statusCode >= 200 && $statusCode < 300;
+    }
 }

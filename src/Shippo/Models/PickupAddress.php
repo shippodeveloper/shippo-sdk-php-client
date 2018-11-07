@@ -20,13 +20,15 @@ use DateTime;
  * @property-read string $contactPhone
  * @property-read string $detailAddress
  * @property-read string $fullAddress
- * @property-read string $locationIdPath
+ * @property-read string $locationIdsPath
  * @property-read integer $version
  * @property-read DateTime $createdAt
  * @property-read DateTime $updatedAt
  */
 class PickupAddress extends BaseModel
 {
+    protected $date_fields = ['createdAt', 'updatedAt'];
+
     public function __construct($data)
     {
         $this->hydrate($data);

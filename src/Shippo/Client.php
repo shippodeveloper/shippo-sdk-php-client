@@ -46,7 +46,7 @@ class Client
             'base_uri' => $this->config->getBaseUri(),
             'timeout' => $this->config->getTimeout(),
             'headers' => [
-                'Authorization' => $this->config->getAccessToken(),
+                'Authorization' => 'Bearer ' .$this->config->getAccessToken(),
                 'Content-Type' => 'application/json'
             ]
         ];

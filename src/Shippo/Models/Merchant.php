@@ -8,9 +8,13 @@
 
 namespace Shippo\Models;
 
+use DateTime;
 
 class Merchant extends BaseModel
 {
+
+    protected $date_fields = ['createdAt', 'updatedAt'];
+
     public function __construct($data)
     {
         $this->hydrate($data);
