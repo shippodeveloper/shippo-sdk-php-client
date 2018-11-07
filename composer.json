@@ -1,15 +1,26 @@
 {
     "name": "shippo/api_client",
     "description": "Shippo APIs Client Library for PHP",
+    "authors": [{
+        "name": "Shippo",
+        "email": "p.ptsp@shippo.vn",
+        "homepage": "https://shippo.vn",
+        "role": "Development Team"
+    }],
+    "support": {
+        "email": "p.ptsp@shippo.vn"
+    },
     "type": "library",
     "license": "Aapache-2.0",
     "minimum-stability": "stable",
+    "version": "1.0.0-RC",
     "require": {
+        "php" : "^7.0",
         "guzzlehttp/guzzle": "~6.0",
         "monolog/monolog": "^1.23"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7"
+        "phpunit/phpunit": "^6"
     },
     "autoload": {
         "psr-0": {"Shippo\\": "src/"}

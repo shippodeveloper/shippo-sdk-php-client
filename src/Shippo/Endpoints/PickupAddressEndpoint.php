@@ -27,6 +27,12 @@ class PickupAddressEndpoint extends BaseEndpoint
         parent::__construct($client);
     }
 
+    /**
+     * Get list of pickup addresses
+     *
+     * @return Collection
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     public function get(): Collection {
         $endpoint = '/my/pickup_addresses';
 
@@ -54,7 +60,7 @@ class PickupAddressEndpoint extends BaseEndpoint
      * @return PickupAddress
      * @throws \GuzzleHttp\Exception\GuzzleException | Exception
      */
-    public function create($param): PickupAddress {
+    public function create($param) {
         $response = $this->client->getHttp()->request('POST', $this->endpointUrl, [
             'json' => $param
         ]);
@@ -69,10 +75,10 @@ class PickupAddressEndpoint extends BaseEndpoint
 
     /**
      * @param int $id
-     * @return PickupAddress
+     * @return PickupAddress | null
      * @throws \GuzzleHttp\Exception\GuzzleException | Exception
      */
-    public function detail(int $id): PickupAddress {
+    public function detail(int $id) {
         $endpoint = $this->endpointUrl .'/' .$id;
 
         $response = $this->client->getHttp()->request('GET', $endpoint);
@@ -87,14 +93,14 @@ class PickupAddressEndpoint extends BaseEndpoint
     /**
      * @param int $id
      * @param $param
-     * @return PickupAddress
+     * @return PickupAddress | null
      *
      * @throws \GuzzleHttp\Exception\GuzzleException | Exception
      */
-    public function edit(int $id, $param): PickupAddress {
+    public function edit(int $id, $param) {
         $endpoint = $this->endpointUrl .'/' .$id;
 
-        $response = $this->client->getHttp()->request('PATH', $endpoint, [
+        $response = $this->client->getHttp()->request('PATCH', $endpoint, [
             'json' => $param
         ]);
 

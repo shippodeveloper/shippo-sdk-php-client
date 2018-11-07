@@ -47,7 +47,7 @@ class Client
             'timeout' => $this->config->getTimeout(),
             'headers' => [
                 'Authorization' => 'Bearer ' .$this->config->getAccessToken(),
-                'Content-Type' => 'application/json'
+                'Content-Type' => 'application/json; charset=utf-8'
             ]
         ];
 

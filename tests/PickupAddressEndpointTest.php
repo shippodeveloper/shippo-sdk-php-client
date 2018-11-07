@@ -122,7 +122,7 @@ class PickupAddressEndpointTest extends BaseTest
 
         $result = $this->endpoint->delete($pa->id);
         $this->assertEquals(true, $result);
-        $this->endpoint->delete($pa->id);
+        $this->endpoint->detail($pa->id);
     }
 
     private function _createPA($param = []) {
