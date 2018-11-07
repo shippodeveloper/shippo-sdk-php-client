@@ -1,0 +1,14 @@
+language: php
+
+sudo: false
+
+php:
+  - 7
+
+before_install:
+- composer self-update
+- composer install
+- composer dump-autoload
+
+script:
+- vendor/bin/phpunit
