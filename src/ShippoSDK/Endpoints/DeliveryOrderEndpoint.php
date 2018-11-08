@@ -6,12 +6,12 @@
  * Time: 10:55
  */
 
-namespace Shippo\Endpoints;
+namespace ShippoSDK\Endpoints;
 
 
-use Shippo\Client;
-use Shippo\Exception;
-use Shippo\Models\DeliveryOrder;
+use ShippoSDK\Client;
+use ShippoSDK\Exception;
+use ShippoSDK\Models\DeliveryOrder;
 
 class DeliveryOrderEndpoint extends BaseEndpoint
 {
@@ -29,7 +29,7 @@ class DeliveryOrderEndpoint extends BaseEndpoint
         $response = $this->client->getHttp()->request('POST', $this->endpointUrl, [
             'json' => $param
         ]);
-        
+
         if (!$this->is2xxHttpStatus($response->getStatusCode())) {
             throw new Exception($response->getBody()->getContents(), $response->getStatusCode());
         }

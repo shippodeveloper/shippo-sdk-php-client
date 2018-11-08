@@ -6,10 +6,10 @@
  * Time: 16:45
  */
 
-namespace Shippo\Endpoints;
+namespace ShippoSDK\Endpoints;
 
 
-use Shippo\Client;
+use ShippoSDK\Client;
 
 abstract class BaseEndpoint
 {

@@ -6,13 +6,13 @@
  * Time: 10:56
  */
 
-namespace Shippo\Endpoints;
+namespace ShippoSDK\Endpoints;
 
 
-use Shippo\Client;
-use Shippo\Collection;
-use Shippo\Exception;
-use Shippo\Models\Merchant;
+use ShippoSDK\Client;
+use ShippoSDK\Collection;
+use ShippoSDK\Exception;
+use ShippoSDK\Models\Merchant;
 
 class MerchantEndpoint extends BaseEndpoint
 {

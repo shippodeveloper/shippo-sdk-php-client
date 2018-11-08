@@ -6,13 +6,13 @@
  * Time: 16:43
  */
 
-namespace Shippo\Endpoints;
+namespace ShippoSDK\Endpoints;
 
 
-use Shippo\Client;
-use Shippo\Collection;
-use Shippo\Exception;
-use Shippo\Models\Location;
+use ShippoSDK\Client;
+use ShippoSDK\Collection;
+use ShippoSDK\Exception;
+use ShippoSDK\Models\Location;
 
 class LocationEndpoint extends BaseEndpoint
 {

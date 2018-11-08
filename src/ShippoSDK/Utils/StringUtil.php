@@ -6,7 +6,7 @@
  * Time: 16:56
  */
 
-namespace Shippo\Utils;
+namespace ShippoSDK\Utils;
 
 
 class StringUtil

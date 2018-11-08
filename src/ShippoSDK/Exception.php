@@ -6,7 +6,7 @@
  * Time: 11:51
  */
 
-namespace Shippo;
+namespace ShippoSDK;
 
 
 use Throwable;

@@ -6,7 +6,7 @@
  * Time: 16:42
  */
 
-namespace Shippo\Utils;
+namespace ShippoSDK\Utils;
 
 
 use DateTime;

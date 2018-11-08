@@ -6,7 +6,7 @@
  * Time: 14:45
  */
 
-use Shippo\Endpoints\LocationEndpoint;
+use ShippoSDK\Endpoints\LocationEndpoint;
 
 class LocationEndpointTest extends BaseTest
 {
@@ -32,7 +32,7 @@ class LocationEndpointTest extends BaseTest
 
     public function testGetLocations()
     {
-        /** @var \Shippo\Models\Location[] $collection */
+        /** @var \ShippoSDK\Models\Location[] $collection */
         $collection = $this->endpoint->get();
         $first = $collection[0];
 

@@ -6,13 +6,13 @@
  * Time: 17:26
  */
 
-namespace Shippo\Models;
+namespace ShippoSDK\Models;
 
 
 use DateTime;
 use DateTimeInterface;
 use GuzzleHttp\Psr7\Response;
-use Shippo\Utils\DateTimeUtil;
+use ShippoSDK\Utils\DateTimeUtil;
 
 abstract class BaseModel
 {

@@ -6,7 +6,7 @@
  * Time: 15:45
  */
 
-namespace Shippo;
+namespace ShippoSDK;
 
 
 use GuzzleHttp\ClientInterface;
