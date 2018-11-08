@@ -37,6 +37,6 @@ class LocationEndpointTest extends BaseTest
         $first = $collection[0];
 
         $location = $this->endpoint->detail($first->id);
-        $this->assertEquals($first->name, $location->name, "Name match");
+        $this->assertEquals($first->name, $location->name, "Location name not match");
     }
 }

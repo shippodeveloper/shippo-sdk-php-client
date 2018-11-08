@@ -72,6 +72,6 @@ class LocationEndpoint extends BaseEndpoint
         }
 
         $body = \GuzzleHttp\json_decode($response->getBody(), true);
-        return new Location($body);
+        return isset($body['result'])? new Location($body['result']) : null;
     }
 }

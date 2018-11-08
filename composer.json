@@ -2,7 +2,7 @@
     "name": "shippo/api_client",
     "description": "Shippo APIs Client Library for PHP",
     "authors": [{
-        "name": "Shippo",
+        "name": "Smart Delivery JSC",
         "email": "p.ptsp@shippo.vn",
         "homepage": "https://shippo.vn",
         "role": "Development Team"

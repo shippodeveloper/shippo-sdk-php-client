@@ -37,7 +37,7 @@ class Config
     {
         if(strpos($method, 'get') === 0) {
             $name = StringUtil::camelCaseToUnderscore(substr($method, 3, strlen($method)));
-            return $this->config[$name];
+            return isset($this->config[$name])? $this->config[$name] : null;
         }
     }
 }
