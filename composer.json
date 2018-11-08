@@ -23,6 +23,6 @@
         "phpunit/phpunit": "^6"
     },
     "autoload": {
-        "psr-0": {"Shippo\\": "src/"}
+        "psr-0": {"ShippoSDK\\": "src/"}
     }
 }
