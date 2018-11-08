@@ -75,6 +75,35 @@ class DeliveryOrderEndpointTest extends BaseTest
         $this->assertEquals(\ShippoSDK\Models\DeliveryOrder::STATE_CANCELLED, $order->state);
     }
 
+    public function testChangeCOD() {
+        $newCod = \random_int(100000, 2000000);
+        $sampleOrder = $this->_createDeliveryOrder();
+
+        $order = $this->endpoint->edit($sampleOrder->orderCode, [
+            'cod' => $newCod
+        ]);
+
+        $this->assertEquals($sampleOrder->id, $order->id);
+        $this->assertEquals($sampleOrder->receiverName, $order->receiverName);
+        $this->assertEquals($newCod, $order->cod);
+    }
+
+    public function testChangeReceiver() {
+        $sampleOrder = $this->_createDeliveryOrder();
+        $param = [
+            'receiverName' => 'Huỳnh Văn Nghệ',
+            'deliverDetailAddress' => 'Số 2 Ngụy Như Kontum',
+            'deliverLocationId' => 711
+        ];
+
+        $order = $this->endpoint->edit($sampleOrder->orderCode, $param);
+
+        $this->assertEquals($sampleOrder->id, $order->id);
+        $this->assertEquals($param['receiverName'], $order->receiverName);
+        $this->assertEquals($param['deliverDetailAddress'], $order->deliverDetailAddress);
+        $this->assertStringEndsWith($param['deliverLocationId'], $order->deliverLocationIdsPath);
+    }
+
     private function _createPickupAddress(): \ShippoSDK\Models\PickupAddress {
         $pickupAddressEP = new \ShippoSDK\Endpoints\PickupAddressEndpoint($this->getClient());
         $list = $pickupAddressEP->get();
@@ -104,7 +133,7 @@ class DeliveryOrderEndpointTest extends BaseTest
             'deliveryPackage' => 'STC',
             'merchantOrderCode' => 'MOC_0001',
             'merchantPrivateNote' => 'Freddie Mercury is gay',
-            'code' => '380000',
+            'code' => '0',
             'deliveryNote' => '',
             'receiverPhone' => '0380987654',
             'receiverName' => 'Brian May',

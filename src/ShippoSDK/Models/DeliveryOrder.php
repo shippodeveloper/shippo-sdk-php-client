@@ -39,6 +39,7 @@ use DateTime;
  * @property-read string $pickupNote
  * @property-read string $deliverLocationIdsPath
  * @property-read string $deliverLocationNamesPath
+ * @property-read string $deliverDetailAddress
  * @property-read string $receiverName
  * @property-read string $receiverPhone
  * @property-read string $deliveryNote
