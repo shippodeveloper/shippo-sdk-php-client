@@ -29,7 +29,7 @@ class DeliveryOrderEndpoint extends BaseEndpoint
         $response = $this->client->getHttp()->request('POST', $this->endpointUrl, [
             'json' => $param
         ]);
-
+        
         if (!$this->is2xxHttpStatus($response->getStatusCode())) {
             throw new Exception($response->getBody()->getContents(), $response->getStatusCode());
         }

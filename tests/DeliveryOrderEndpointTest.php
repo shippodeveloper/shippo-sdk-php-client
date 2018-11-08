@@ -77,6 +77,11 @@ class DeliveryOrderEndpointTest extends BaseTest
 
     private function _createPickupAddress(): \Shippo\Models\PickupAddress {
         $pickupAddressEP = new \Shippo\Endpoints\PickupAddressEndpoint($this->getClient());
+        $list = $pickupAddressEP->get();
+        if ($list->count() > 0) {
+            return $list[0];
+        }
+
         $param = [
             'contactName' => 'Xuân Quỳnh',
             'contactPhone' => '0987654321',
