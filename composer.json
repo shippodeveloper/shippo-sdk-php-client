@@ -13,7 +13,7 @@
     "type": "library",
     "license": "Aapache-2.0",
     "minimum-stability": "stable",
-    "version": "1.0.0-RC",
+    "version": "1.0.0-RC2",
     "require": {
         "php" : "^7.0",
         "guzzlehttp/guzzle": "~6.0",
