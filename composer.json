@@ -1,5 +1,5 @@
 {
-    "name": "shippo/api_client",
+    "name": "shippodeveloper/shippo-sdk-php-client",
     "description": "Shippo APIs Client Library for PHP",
     "authors": [{
         "name": "Smart Delivery JSC",
