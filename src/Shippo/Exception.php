@@ -18,9 +18,12 @@ class Exception extends \RuntimeException
     public function __construct(string $message = "", int $code = 0, Throwable $previous = null)
     {
         $exceptionData = json_decode($message, true);
+        if (isset($exceptionData['error'])) {
+            $exceptionData = $exceptionData['error'];
+        }
         if (null !== $exceptionData) {
-            $message = $exceptionData['message'];
-            $this->name = $exceptionData['name'];
+            $message = @$exceptionData['message'];
+            $this->name = @$exceptionData['name'];
         }
         parent::__construct($message, $code, $previous);
     }
