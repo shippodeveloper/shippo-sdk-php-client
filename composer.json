@@ -11,7 +11,7 @@
         "email": "p.ptsp@shippo.vn"
     },
     "type": "library",
-    "license": "Aapache-2.0",
+    "license": "Apache-2.0",
     "minimum-stability": "stable",
     "version": "1.0.0-RC3",
     "require": {
