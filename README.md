@@ -22,6 +22,52 @@ https://open-api.shippo.vn/
 ### Composer ###
 To install run `composer require shippodeveloper/shippo-sdk-php-client`
 
+
+##Usage
+
+### Configuration ##
+Configuration is done through an instance of ShippoSDK\Client with ShippoSDK\Config. 
+
+```php
+$config = new \ShippoSDK\Config([
+    'access_token' => 'your access token',
+    'base_uri' => 'https://apix.shippo.vn', // or https://sandbox-apix.shippo.vn for sandbox mode
+]);
+$client = new \ShippoSDK\Client($config);
+```
+
+### API Endpoints
+Each APIs was implement as API Endpoint class.
+
+This example working with Delivery Order
+
+```php
+$deliveryOrderEP = new \ShippoSDK\Endpoints\DeliveryOrderEndpoint($client);
+$param = [
+    'pickupAddressId' => 100022031,
+    'services' => [
+        'insurance' => [
+            'amount' => 1000000, //bảo hiểm với số tiền 1 triệu đồng
+        ]
+    ],
+    'goods' => [],
+    'chargeType' => 'SENDER',
+    'deliveryPackage' => 'STC',
+    'merchantOrderCode' => 'MOC_0001',
+    'merchantPrivateNote' => 'Freddie Mercury is gay',
+    'code' => '380000',
+    'deliveryNote' => '',
+    'receiverPhone' => '0380987654',
+    'receiverName' => 'Brian May',
+    'deliverDetailAddress' => 'Fist Aid 1985',
+    'deliverLocationId' => 18, //Ba Đình
+    'pickupNote' => 'Đến gọi cho Mary Austin'
+];
+$order = $deliveryOrderEP->create($param);
+```
+
+Please see the test scripts in the `tests` directory to understand how it works
+
 ## To be contributor ##
 We embrace developers to contribute to Shippo's developer libraries. In addition to PHP, developers can develop integrated libraries with Shippo's Open API for NodeJS, Java, Ruby, and Python.
 
