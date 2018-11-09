@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/shippodeveloper/shippo-sdk-php-client.svg?branch=master)](https://travis-ci.org/shippodeveloper/shippo-sdk-php-client)
 [![Latest Stable Version](https://poser.pugx.org/shippodeveloper/shippo-sdk-php-client/v/stable)](https://packagist.org/packages/shippodeveloper/shippo-sdk-php-client)
 [![Total Downloads](https://poser.pugx.org/shippodeveloper/shippo-sdk-php-client/downloads)](https://packagist.org/packages/shippodeveloper/shippo-sdk-php-client)
+[![Latest Unstable Version](https://poser.pugx.org/shippodeveloper/shippo-sdk-php-client/v/unstable)](https://packagist.org/packages/shippodeveloper/shippo-sdk-php-client)
 [![License](https://poser.pugx.org/shippodeveloper/shippo-sdk-php-client/license)](https://packagist.org/packages/shippodeveloper/shippo-sdk-php-client)
 
 # SHIPPO APIs Client Library for PHP #
