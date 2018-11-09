@@ -52,7 +52,7 @@ class DeliveryOrderEndpointTest extends BaseTest
         $this->assertStringEndsWith($pa->locationIdsPath, $order->pickupLocationIdsPath);
         $this->assertEquals($param['receiverName'], $order->receiverName);
         $this->assertEquals($param['receiverPhone'], $order->receiverPhone);
-        $this->assertStringEndsWith($param['deliverLocationId'], $order->deliverLocationIdsPath);
+        $this->assertStringEndsWith((string) $param['deliverLocationId'], $order->deliverLocationIdsPath);
     }
 
     public function testDetail() {
@@ -101,7 +101,7 @@ class DeliveryOrderEndpointTest extends BaseTest
         $this->assertEquals($sampleOrder->id, $order->id);
         $this->assertEquals($param['receiverName'], $order->receiverName);
         $this->assertEquals($param['deliverDetailAddress'], $order->deliverDetailAddress);
-        $this->assertStringEndsWith($param['deliverLocationId'], $order->deliverLocationIdsPath);
+        $this->assertStringEndsWith((string) $param['deliverLocationId'], $order->deliverLocationIdsPath);
     }
 
     private function _createPickupAddress(): \ShippoSDK\Models\PickupAddress {
