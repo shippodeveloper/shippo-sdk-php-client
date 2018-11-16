@@ -25,6 +25,8 @@ use DateTime;
  * @property-read array $services
  * @property-read float $totalMerchantFee
  * @property-read float $weight
+ * @property-read string shift
+ * @property-read string $merchantPrivateNote
  * @property-read string $state
  * @property-read array $goods
  * @property-read string $trackingLink
