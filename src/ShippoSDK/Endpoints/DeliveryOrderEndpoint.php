@@ -47,7 +47,7 @@ class DeliveryOrderEndpoint extends BaseEndpoint
         }
 
         $body = \GuzzleHttp\json_decode($response->getBody(), true);
-        return new DeliveryOrder($body);
+        return isset($body['result'])? new DeliveryOrder($body['result']) : null;
     }
 
     public function edit($code, $param) {
@@ -63,6 +63,21 @@ class DeliveryOrderEndpoint extends BaseEndpoint
 
         $body = \GuzzleHttp\json_decode($response->getBody(), true);
         return isset($body)? new DeliveryOrder($body) : null;
+    }
+
+    public function changeState($code, $new_state) {
+        $endpoint = $this->endpointUrl ."/{$code}/change_state";
+        $response = $this->client->getHttp()->request('PATCH', $endpoint, [
+            'json' => ['state' => $new_state]
+        ]);
+
+        if ($response->getStatusCode() != 200) {
+            throw new Exception($response->getBody()->getContents(), $response->getStatusCode());
+        }
+
+        $body = \GuzzleHttp\json_decode($response->getBody(), true);
+        return isset($body)? new DeliveryOrder($body) : null;
+
     }
 
     public function comments($code) {
